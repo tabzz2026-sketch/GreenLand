@@ -1,7 +1,8 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite",
+  "buildCommand": "cd greenland-stone-crusher && npm install && npm run build",
+  "outputDirectory": "greenland-stone-crusher/dist",
+  "installCommand": "cd greenland-stone-crusher && npm install",
+  "framework": null,
   "rewrites": [
     {
       "source": "/(.*)",
