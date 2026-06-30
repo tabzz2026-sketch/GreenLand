@@ -74,20 +74,7 @@ function App() {
         </div>
       </section>
 
-      {/* Coming Soon Banner */}
-      <section className="bg-gradient-to-r from-slate-100 to-slate-200 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-            <div className="bg-primary-600 text-white px-4 py-2 rounded-full font-bold text-sm uppercase tracking-wider">
-              Coming Soon
-            </div>
-            <div className="text-center md:text-left">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-1">ATS Vehicle Fitness Service</h3>
-              <p className="text-gray-600">Professional vehicle fitness testing and certification - Opening Soon at GreenLand</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* About Section */}
       <section id="about" className="py-20 bg-white">
