@@ -1,0 +1,10 @@
+{
+  "buildCommand": "cd greenland-stone-crusher && npm install && npm run build",
+  "outputDirectory": "greenland-stone-crusher/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
