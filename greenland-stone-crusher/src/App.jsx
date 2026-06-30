@@ -37,16 +37,16 @@ function App() {
           {/* Image Grid */}
           <div className="absolute inset-0 grid grid-cols-2 md:grid-cols-4 h-full z-0">
             <div className="relative overflow-hidden">
-              <img src={img1} alt="Stone Crusher 1" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 cursor-pointer" />
+              <img src={img1} alt="Stone Crusher 1" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 cursor-pointer" loading="lazy" decoding="async" />
             </div>
             <div className="relative overflow-hidden">
-              <img src={img2} alt="Stone Crusher 2" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 cursor-pointer" />
+              <img src={img2} alt="Stone Crusher 2" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 cursor-pointer" loading="lazy" decoding="async" />
             </div>
             <div className="relative overflow-hidden">
-              <img src={img3} alt="Stone Crusher 3" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 cursor-pointer" />
+              <img src={img3} alt="Stone Crusher 3" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 cursor-pointer" loading="lazy" decoding="async" />
             </div>
             <div className="relative overflow-hidden">
-              <img src={img4} alt="Stone Crusher 4" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 cursor-pointer" />
+              <img src={img4} alt="Stone Crusher 4" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 cursor-pointer" loading="lazy" decoding="async" />
             </div>
           </div>
           
@@ -143,7 +143,7 @@ function App() {
             {/* Product 1 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="h-48 overflow-hidden">
-                <img src={img1} alt="Stone Dust" className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" />
+                <img src={img1} alt="Stone Dust" className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Stone Dust</h3>
@@ -154,7 +154,7 @@ function App() {
             {/* Product 2 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="h-48 overflow-hidden">
-                <img src={img2} alt="Coarse Aggregate" className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" />
+                <img src={img2} alt="Coarse Aggregate" className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Coarse Aggregate</h3>
@@ -165,7 +165,7 @@ function App() {
             {/* Product 3 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="h-48 overflow-hidden">
-                <img src={img3} alt="Sand" className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" />
+                <img src={img3} alt="Sand" className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Sand</h3>
@@ -176,7 +176,7 @@ function App() {
             {/* Product 4 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="h-48 overflow-hidden">
-                <img src={img4} alt="Grit" className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" />
+                <img src={img4} alt="Grit" className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Grit (6mm, 10mm)</h3>
@@ -187,7 +187,7 @@ function App() {
             {/* Product 5 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="h-48 overflow-hidden">
-                <img src={img1} alt="Kanker" className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" />
+                <img src={img1} alt="Kanker" className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Kanker (40mm, 60mm)</h3>
@@ -198,7 +198,7 @@ function App() {
             {/* Product 6 */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="h-48 overflow-hidden">
-                <img src={img2} alt="Crushed Stone" className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" />
+                <img src={img2} alt="Crushed Stone" className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Crushed Stone</h3>
