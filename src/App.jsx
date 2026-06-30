@@ -1,12 +1,42 @@
 import './App.css'
+import { useState } from 'react'
 import heroImg from './assets/hero.png'
 import img1 from './assets/1.webp'
 import img2 from './assets/2.webp'
 import img3 from './assets/3.webp'
 import img4 from './assets/4.webp'
 import logo from './assets/Logo.png'
+import { db } from './firebase'
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 
 function App() {
+  const [formData, setFormData] = useState({ name: '', phone: '', message: '' })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState('')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('')
+
+    try {
+      await addDoc(collection(db, 'contacts'), {
+        ...formData,
+        createdAt: serverTimestamp()
+      })
+      setSubmitStatus('success')
+      setFormData({ name: '', phone: '', message: '' })
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
@@ -300,22 +330,60 @@ function App() {
             </div>
             {/* Contact Form */}
             <div>
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
-                  <input type="text" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your name" />
+                  <input 
+                    type="text" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" 
+                    placeholder="Enter your name" 
+                    required
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                  <input type="tel" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Enter your phone number" />
+                  <input 
+                    type="tel" 
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" 
+                    placeholder="Enter your phone number" 
+                    required
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                  <textarea rows="4" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Tell us about your requirements"></textarea>
+                  <textarea 
+                    rows="4" 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" 
+                    placeholder="Tell us about your requirements"
+                    required
+                  ></textarea>
                 </div>
-                <button type="submit" className="w-full bg-primary-600 text-white py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
-                  Send Message
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full bg-primary-600 text-white py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
+                {submitStatus === 'success' && (
+                  <div className="p-4 bg-green-100 text-green-700 rounded-lg">
+                    Thank you! Your message has been sent successfully.
+                  </div>
+                )}
+                {submitStatus === 'error' && (
+                  <div className="p-4 bg-red-100 text-red-700 rounded-lg">
+                    Sorry, there was an error sending your message. Please try again.
+                  </div>
+                )}
               </form>
             </div>
           </div>
